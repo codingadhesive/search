@@ -8,25 +8,18 @@
 </head>
 <body>
     <label for="searchbox">Help Me With:</label>
-    <input type="text" id="search" name="search" size="60">
+    <input type="text" id="search" name="search" size="60" onkeydown="if (event.keyCode == 13 || event.which == 13) {console.log(event.keyCode); window.open('https:\/\/google.com/search?q=' + encodeURIComponent(document.getElementById('search').value) + ' site:freecodecamp.com | site:learnxinyminutes.com | site:developer.mozilla.org\/en-US | site:javascripttutorial.net | site:digitalocean.com | site:devdocs.io  | site:stackoverflow.com | site:theodinproject.com');}" />
+    <button id="goSearch">Go</button>
 
+
+    
 <script>
 
-const search = document.querySelector("#search");
-search.
-
-
-console.log( )
-
-/*
-
-User types in textbox
-User presses enter
-Texbox content has "search syntax" added to end of searchbox input
-user rerouted to search site with that exact search stuff entered.
-
-*/
-
+let goSearch = document.querySelector("#goSearch");
+goSearch.addEventListener("click", goFindIt);
+function goFindIt() {
+    window.open('https:\/\/google.com/search?q=' + encodeURIComponent(document.getElementById('search').value) + ' site:freecodecamp.com | site:learnxinyminutes.com | site:developer.mozilla.org\/en-US | site:javascripttutorial.net | site:digitalocean.com | site:devdocs.io  | site:stackoverflow.com | site:theodinproject.com');
+};
 </script>
 
 
